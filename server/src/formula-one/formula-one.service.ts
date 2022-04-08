@@ -27,4 +27,14 @@ export class FormulaOneService {
     }
     return data.stages;
   }
+
+  async getCompetitor(id): Promise<any> {
+    const { data }: AxiosResponse<Season> = await firstValueFrom(
+      this.httpService.get(
+        `http://api.sportradar.us/formula1/trial/v2/en/competitors/sr:competitor:${id}/profile.json?api_key=${api_key}`,
+      ),
+    );
+
+    return data;
+  }
 }
