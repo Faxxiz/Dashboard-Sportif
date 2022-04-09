@@ -3,6 +3,4 @@ export interface Stage {
   description: string;
   scheduled: string;
   scheduled_end: string;
-  type: string;
-  single_event: boolean;
 }
